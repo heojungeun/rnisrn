@@ -1,27 +1,28 @@
 import React from 'react'
-import {SafeAreaView, Alert, Button} from 'react-native'
-import {TouchableOpacity, TouchableHighlight, Text} from 'react-native'
-import { TextInput } from 'react-native'
-const onPress = () => Alert.alert('home pressed.', 'message')
+import {StyleSheet, SafeAreaView, Text} from 'react-native'
+import {Colors} from 'react-native-paper'
+import Color from 'color'
+
+console.log(Colors.blue500)
+console.log(Color(Colors.blue500).alpha(0.5).lighten(0.5).string())
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <Button title='Home' onPress={onPress} />
-      <Text onPress={onPress}>This Text has onPress function</Text>
-      <TouchableOpacity onPress={onPress}>
-        <Text>TouchableOpacity</Text>
-      </TouchableOpacity>
-      <TouchableHighlight onPress={onPress}>
-        <Text>TouchableHighlight</Text>
-      </TouchableHighlight>
-      <TextInput
-        placeholder="enter your name"
-        onChangeText={(text: string) => console.log(text)}
-        onFocus={() => console.log('onFocus')}
-        onBlur={() => console.log('onBlur')}
-        onEndEditing={() => console.log('onEndEditing')}
-      />
+    <SafeAreaView style={[styles.SafeAreaView]}>
+      <Text style={[styles.text]}>This Text has onPress function</Text>
     </SafeAreaView>
   )
 }
+// prettier-ignore
+const styles = StyleSheet.create({
+  SafeAreaView: {
+    backgroundColor: Colors.blue500,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 20,
+    color: Color(Colors.blue500).alpha(0.7).lighten(0.9).string(),
+  },
+})
