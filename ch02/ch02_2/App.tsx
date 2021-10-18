@@ -1,24 +1,24 @@
 import React from 'react'
 // prettier-ignore
-import {StyleSheet, SafeAreaView, Platform, View, Alert} from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import {StyleSheet, SafeAreaView, Platform, View, FlatList} from 'react-native'
 import {Colors} from 'react-native-paper'
-import TopBar from './src/screens/TopBar'
-import Content from './src/screens/Content'
-import BottomBar from './src/screens/BottomBar'
+import color from 'color'
+import Person from './src/copy/Person'
+import * as D from './src/data'
 
+const people: D.IPerson[] = D.makeArray(10).map(D.createRandomPerson)
+
+// prettier-ignore
 export default function App() {
-  const iconPressed = () => Alert.alert('icon pressed')
   return (
     <>
       <SafeAreaView style={[styles.flex]}>
-        <TopBar />
-        <Content />
-        <BottomBar />
+        <FlatList 
+          data={people} 
+          renderItem={({item}) => <Person person={item}/>}
+          keyExtractor={(item, index) => item.id} 
+          ItemSeparatorComponent={() => <View style={styles.itemSeparator} />}/>
       </SafeAreaView>
-      <View style={[styles.absoluteView]}>
-        <Icon name="feather" size={50} color="white" onPress={iconPressed} />
-      </View>
     </>
   )
 }
@@ -27,6 +27,10 @@ const styles = StyleSheet.create({
   flex: {flex: 1},
   imageBackground: {flex: 1},
   padding10: {padding: 10},
+  itemSeparator: {
+    borderWidth: 1,
+    borderColor: color(Colors.grey500).lighten(0.3).string()
+  },
   text: {
     textAlign: 'center',
     fontSize: 25,
