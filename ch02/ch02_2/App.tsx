@@ -1,42 +1,65 @@
 import React from 'react'
-import {Platform, Dimensions, StyleSheet, SafeAreaView, Text, View} from 'react-native'
-import {Colors} from 'react-native-paper'
-import Color from 'color'
-
-const {width, height} = Dimensions.get('window')
 // prettier-ignore
+import {StyleSheet, SafeAreaView, Platform, ImageBackground, Image, View, Text, Alert} from 'react-native'
+import {Colors} from 'react-native-paper'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import * as D from './src/data'
+
+const avatarUrl = D.randomAvatarUrl()
+const avatarSize = 50
+const text = `Almost before we knew it, we had left the ground`
+const onIconPressed = () => Alert.alert('icon pressed')
+
 export default function App() {
   return (
-    <SafeAreaView style={[styles.SafeAreaView]}>
-      <Text style={[styles.text]}>os: {Platform.OS}</Text>
-      <Text style={[styles.text]}>width: {width}</Text>
-      <Text style={[styles.text]}>height: {height}</Text>
-
-      <View style={[styles.box, styles.border]} />
-      <View style={[styles.box, styles.border, {borderRadius: 20}]} />
-      <View style={[styles.box, styles.border, {borderTopLeftRadius: 40, borderBottomLeftRadius: 40}]}
-      />
+    <SafeAreaView style={[styles.flex]}>
+      <ImageBackground 
+        style={[styles.imageBackground]} 
+        source={require('./src/assets/images/bg.jpg')}>
+        <Image source={{uri: avatarUrl}} style={[styles.image]} />
+        <View style={[styles.flex, styles.padding10]}>
+          <Text style={[styles.text, styles.regular]}>{text} [regular]</Text>
+          <Text style={[styles.text, styles.medium]}>{text} [medium]</Text>
+          <Text style={[styles.text, styles.semiBold]}>{text} [semi bold]</Text>
+          <Text style={[styles.text, styles.bold]}>{text} [bold]</Text>
+        </View>
+        <Icon name="home" size={50} color={Colors.lightBlue500}
+        onPress={onIconPressed} />
+      </ImageBackground>
     </SafeAreaView>
   )
 }
 // prettier-ignore
 const styles = StyleSheet.create({
-  SafeAreaView: {
-    backgroundColor: Colors.blue300,
-    flex: 1,
-    padding: 10,
+  flex: {flex: 1},
+  imageBackground: {flex: 1},
+  padding10: {padding: 10},
+  image: {
+    width: avatarSize,
+    height: avatarSize,
+    borderRadius: avatarSize / 2,
   },
   text: {
-    fontSize: 20,
-    color: Color(Colors.blue500).lighten(0.9).string(),
+    textAlign: 'center',
+    fontSize: 25,
+    color: 'black',
     marginBottom: 10,
   },
-  box: {
-    height: 100, backgroundColor: Colors.lime500, marginBottom: 10,
-    marginLeft: Platform.select({ios: 20, android: 0}),
+
+  regular: {
+    fontFamily: 'DancingScript-Regular',
+    fontWeight: '400',
   },
-  border: {
-    borderWidth: 10,
-    borderColor: Color('black').alpha(0.3).string(),
+  medium: {
+    fontFamily: 'DancingScript-Medium',
+    fontWeight: '500',
+  },
+  semiBold: {
+    fontFamily: 'DancingScript-SemiBold',
+    fontWeight: '600',
+  },
+  bold: {
+    fontFamily: 'DancingScript-Bold',
+    fontWeight: Platform.select({ios: '700', android: '600'}),
   },
 })
