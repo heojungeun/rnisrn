@@ -5,35 +5,57 @@ import color from 'color'
 // prettier-ignore
 export const styles = StyleSheet.create({
   view: {
-    backgroundColor: '#fffffe',
+    flexDirection: 'row',
+    backgroundColor: Colors.lime100,
     padding: 5,
   },
+  leftView: {padding: 5},
   avatar: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    borderColor: color(Colors.blue500).lighten(0.5).string(),
+    borderWidth: 2,
   },
-  nameEmailView: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  rightView: {
+    flex: 1,
+    padding: 5,
+    marginRight: 10,
   },
   name: {
-    fontSize: 17,
+    marginRight: 5,
+    fontSize: 22,
     fontWeight: '500',
-    marginRight: 15,
   },
-  email: {},
-  dateView: {},
-  createdDate: {},
-  text: {},
+  email: {
+    textDecorationLine: 'underline',
+    color: Colors.blue500,
+    textDecorationColor: Colors.blue500,
+  },
+  dateView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 3,
+    marginTop: 5,
+  },
+  text: {fontSize: 16},
+  comments: {
+    marginTop: 10,
+    fontSize: 16,
+  },
   image: {
-      width: '100%',
-      height: 150,
+    height: 150,
+    marginTop: 15,
   },
   countsView: {
-      flexDirection: 'row',
-      padding: 3,
-      justifyContent: 'space-around',
+    flexDirection: 'row',
+    padding: 3,
+    justifyContent: 'space-around',
   },
-  counts: {},
+  touchableIcon: {
+    flexDirection: 'row',
+    padding: 5,
+    alignItems: 'center',
+  },
+  iconText: {
+    color: Colors.deepPurple500,
+     marginLeft: 3,
+  },
 })
