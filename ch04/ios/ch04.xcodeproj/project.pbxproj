@@ -11,14 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2675FE6730484B12B0AC16E3 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39DF0C3072E24F7984717744 /* DancingScript-Bold.ttf */; };
-		43B7FE7EB1264942ADC6616A /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C5CD48761DC4896A5877EF4 /* DancingScript-Medium.ttf */; };
-		738AE0182EA14FD585889385 /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E71122F2C2C4186A8EDCB44 /* DancingScript-SemiBold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		ACDD22ED7EE04DADA7429EA1 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6437D08E5524C9FB025D6D5 /* DancingScript-Regular.ttf */; };
 		C56C51356F83E005B8C1A486 /* libPods-ch04.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A48F998B651F918CE0AEEF /* libPods-ch04.a */; };
 		E63DF8C0D176CCF5C879C723 /* libPods-ch04-ch04Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4853B8EE62E6F3E8FD892B5C /* libPods-ch04-ch04Tests.a */; };
-		FDD657015DF946EA9A875C97 /* MajorMonoDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93A7AD5997C04ACF8F3F0655 /* MajorMonoDisplay-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,16 +37,11 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ch04/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ch04/main.m; sourceTree = "<group>"; };
 		27A48F998B651F918CE0AEEF /* libPods-ch04.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ch04.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		39DF0C3072E24F7984717744 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Bold.ttf"; path = "../src/assets/fonts/DancingScript-Bold.ttf"; sourceTree = "<group>"; };
 		4853B8EE62E6F3E8FD892B5C /* libPods-ch04-ch04Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ch04-ch04Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C5CD48761DC4896A5877EF4 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Medium.ttf"; path = "../src/assets/fonts/DancingScript-Medium.ttf"; sourceTree = "<group>"; };
-		5E71122F2C2C4186A8EDCB44 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-SemiBold.ttf"; path = "../src/assets/fonts/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; };
 		817F0CB343EE392FEAE59618 /* Pods-ch04.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ch04.release.xcconfig"; path = "Target Support Files/Pods-ch04/Pods-ch04.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ch04/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8673C7D4D0FCD3341C333C57 /* Pods-ch04-ch04Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ch04-ch04Tests.release.xcconfig"; path = "Target Support Files/Pods-ch04-ch04Tests/Pods-ch04-ch04Tests.release.xcconfig"; sourceTree = "<group>"; };
-		93A7AD5997C04ACF8F3F0655 /* MajorMonoDisplay-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MajorMonoDisplay-Regular.ttf"; path = "../src/assets/fonts/MajorMonoDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		A9424A222C1A5CC2CF46ECFB /* Pods-ch04.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ch04.debug.xcconfig"; path = "Target Support Files/Pods-ch04/Pods-ch04.debug.xcconfig"; sourceTree = "<group>"; };
-		C6437D08E5524C9FB025D6D5 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Regular.ttf"; path = "../src/assets/fonts/DancingScript-Regular.ttf"; sourceTree = "<group>"; };
 		CF09D003D2CE651C4B4CBDE4 /* Pods-ch04-ch04Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ch04-ch04Tests.debug.xcconfig"; path = "Target Support Files/Pods-ch04-ch04Tests/Pods-ch04-ch04Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -96,14 +86,8 @@
 		0D933EFB29F8473D8E4675D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				39DF0C3072E24F7984717744 /* DancingScript-Bold.ttf */,
-				4C5CD48761DC4896A5877EF4 /* DancingScript-Medium.ttf */,
-				C6437D08E5524C9FB025D6D5 /* DancingScript-Regular.ttf */,
-				5E71122F2C2C4186A8EDCB44 /* DancingScript-SemiBold.ttf */,
-				93A7AD5997C04ACF8F3F0655 /* MajorMonoDisplay-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		13B07FAE1A68108700A75B9A /* ch04 */ = {
@@ -169,7 +153,6 @@
 				CF09D003D2CE651C4B4CBDE4 /* Pods-ch04-ch04Tests.debug.xcconfig */,
 				8673C7D4D0FCD3341C333C57 /* Pods-ch04-ch04Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -269,11 +252,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				2675FE6730484B12B0AC16E3 /* DancingScript-Bold.ttf in Resources */,
-				43B7FE7EB1264942ADC6616A /* DancingScript-Medium.ttf in Resources */,
-				ACDD22ED7EE04DADA7429EA1 /* DancingScript-Regular.ttf in Resources */,
-				738AE0182EA14FD585889385 /* DancingScript-SemiBold.ttf in Resources */,
-				FDD657015DF946EA9A875C97 /* MajorMonoDisplay-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
