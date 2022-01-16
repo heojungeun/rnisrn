@@ -1,5 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import {StyleSheet, SafeAreaView, Text, ScrollView, Dimensions} from 'react-native'
+import {
+  StyleSheet,
+  SafeAreaView,
+  Text,
+  ScrollView,
+  Dimensions,
+} from 'react-native'
 import Cache from './src/screens/Cache'
 import Memo from './src/screens/Memo'
 import Fibo from './src/screens/Fibo'
@@ -20,7 +26,10 @@ const styles = StyleSheet.create({
 export default function App() {
   return (
     <SafeAreaView style={[styles.SafeAreaView]}>
-      <ScrollView horizontal contentContainerStyle={[styles.contentContainerStyle]}>
+      <ScrollView 
+        horizontal 
+        pagingEnabled
+        contentContainerStyle={[styles.contentContainerStyle]}>
         <Cache />
         <Memo />
         <Fibo />

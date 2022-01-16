@@ -4,7 +4,7 @@ import {Colors} from 'react-native-paper'
 import color from 'color'
 import * as D from '../data'
 import Person from './Person'
-import { createOrUse } from './createOrUse'
+import {createOrUse} from './createOrUse'
 
 const title = 'Cache'
 const styles = StyleSheet.create({
