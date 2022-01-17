@@ -1,6 +1,7 @@
 import http from "http";
 import WebSocket, { WebSocketServer } from "ws";
 import express from "express";
+import { Socket } from "dgram";
 
 const app = express();
 
@@ -16,11 +17,27 @@ const handleListen = () => console.log(`Listening on http://localhost:3000`);
 const server = http.createServer(app);
 const wss = new WebSocketServer({server}); 
 
-// bksocket 연결된 브라우저 
-function handleConnection(bksocket){
-    console.log(bksocket);
-}
+const sockets = [];
 
-wss.on("connection", handleConnection)
+// socket 연결된 브라우저 
+wss.on("connection", (socket) => {
+    sockets.push(socket);
+    socket["nickname"] = "AAA";
+    console.log("Connected to Browser");
+    socket.on("close", () => console.log("DisConnected from the browser"));
+    socket.on("message", (msg) => {
+        const message = JSON.parse(msg);
+        switch(message.type){
+            case "newMessage":
+                sockets.forEach(aSocket => {
+                    aSocket.send(`${socket.nickname}: ${message.payload.toString("utf-8")}`);
+                });
+            case "nickname":
+                socket["nickname"] = message.payload;
+            
+        }
+        
+    })
+});
 
 server.listen(3000, handleListen); 
