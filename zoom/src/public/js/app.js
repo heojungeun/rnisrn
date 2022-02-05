@@ -10,6 +10,8 @@ let cameraOff = false;
 let roomName;
 let myPeerConnection;
 
+let myDataChannel;
+
 const call = document.getElementById('call');
 
 call.hidden = true;
@@ -121,13 +123,22 @@ welcomeForm.addEventListener("submit", handleWelcomeSubmit);
 // Socket Code
 
 socket.on("welcome", async () => {
-  const offer = await myPeerConnection.createOffer();
-  myPeerConnection.setLocalDescription(offer);
-  console.log("sent the offer");
-  socket.emit("offer", offer, roomName);
+    // offer 생성
+    myDataChannel = myPeerConnection.createDataChannel("chat");
+    myDataChannel.addEventListener("message", (event) => console.log(event.data));
+    console.log("made data channel");
+    const offer = await myPeerConnection.createOffer();
+    myPeerConnection.setLocalDescription(offer);
+    console.log("sent the offer");
+    socket.emit("offer", offer, roomName);
 })
 
 socket.on("offer", async(offer) => {
+    // offer 받는 쪽
+    myPeerConnection.addEventListener("datachannel", (event) => {
+        myDataChannel = event.channel;
+        myDataChannel.addEventListener("message", (event) => console.log(event.data));
+    });
     console.log("receive the offer");
     myPeerConnection.setRemoteDescription(offer);
     const answer = await myPeerConnection.createAnswer();
@@ -153,11 +164,11 @@ function makeConnection(){
         iceServers: [
             {
                 urls: [ // 공용 주소를 알기 위한 stun 서버 (구글 제공)
-                    "stun.l.google.com:19302",
-                    "stun1.l.google.com:19302",
-                    "stun2.l.google.com:19302",
-                    "stun3.l.google.com:19302",
-                    "stun4.l.google.com:19302",
+                    "stun:stun.l.google.com:19302",
+                    "stun:stun1.l.google.com:19302",
+                    "stun:stun2.l.google.com:19302",
+                    "stun:stun3.l.google.com:19302",
+                    "stun:stun4.l.google.com:19302",
                 ],
             },
         ],
